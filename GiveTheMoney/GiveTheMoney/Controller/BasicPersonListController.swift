@@ -20,14 +20,18 @@ class BasicPersonListController: UIViewController, UITableViewDataSource {
     }
 
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let person = Person.all[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasicPersonCell", for: indexPath) as! BasicPersonTableViewCell
-        guard let first = person.firstName,let last = person.lastName, let phone = person.phone else{
-            return cell
-        }
         
-        NSLog(person.lastName as! String)
+        //cell.insertInfo(firstName: person.firstName, lastName: person.lastName, phoneNumber: person.phone)
+        cell.firstNameLabel.text = person.firstName
+        cell.lastNameLabel.text = person.lastName
+        cell.phoneLabel.text = person.phone
+        return cell
+    }
+        
+        /*NSLog(person.lastName as! String)
         NSLog(person.firstName as! String)
         NSLog(person.phone as! String)
         
@@ -40,17 +44,17 @@ class BasicPersonListController: UIViewController, UITableViewDataSource {
         //cell.phoneLabel?.text = person.phone
         //
         return cell
-    }
+    }*/
     
     
     
-    var tableView: UITableView?
+    var basicPersonTable: UITableView?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView?.dataSource = self
+        basicPersonTable?.dataSource = self
         // Do any additional setup after loading the view.
         
     }
@@ -58,17 +62,24 @@ class BasicPersonListController: UIViewController, UITableViewDataSource {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView?.reloadData()
+        basicPersonTable?.reloadData()
     }
     
-    /*
+    let segueDetailBasicPersonId = "segueDetailBasicPerson"
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == self.segueDetailBasicPersonId{
+            if let index = self.basicPersonTable?.indexPathForSelectedRow?.row{
+                let showDetainController = segue.destination as!DetailBasicPersonViewController
+                showDetainController.person = Person.all[index]
+            }
+        }
     }
-    */
+    
 
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8025A0BF2253B5910027711D /* DetailBasicPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A0BE2253B5910027711D /* DetailBasicPersonViewController.swift */; };
+		8025A0C32253BCF80027711D /* Concerned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A0C22253BCF80027711D /* Concerned.swift */; };
+		8025A0C52253BDCF0027711D /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A0C42253BDCF0027711D /* ExpenseTableViewCell.swift */; };
+		8025A0C72253C1D30027711D /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A0C62253C1D30027711D /* Expense.swift */; };
 		80C0DA692253559100466EA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0DA682253559100466EA6 /* AppDelegate.swift */; };
 		80C0DA6E2253559100466EA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80C0DA6C2253559100466EA6 /* Main.storyboard */; };
 		80C0DA712253559100466EA6 /* GiveTheMoney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80C0DA6F2253559100466EA6 /* GiveTheMoney.xcdatamodeld */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8025A0BE2253B5910027711D /* DetailBasicPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBasicPersonViewController.swift; sourceTree = "<group>"; };
+		8025A0C22253BCF80027711D /* Concerned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerned.swift; sourceTree = "<group>"; };
+		8025A0C42253BDCF0027711D /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		8025A0C62253C1D30027711D /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Expense.swift; path = ../Others/Expense.swift; sourceTree = "<group>"; };
 		80C0DA652253559100466EA6 /* GiveTheMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiveTheMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80C0DA682253559100466EA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80C0DA6D2253559100466EA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				80C0DAA322535EDA00466EA6 /* Person.swift */,
+				8025A0C62253C1D30027711D /* Expense.swift */,
+				8025A0C22253BCF80027711D /* Concerned.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,7 +155,9 @@
 		80C0DA9A225356CD00466EA6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8025A0BE2253B5910027711D /* DetailBasicPersonViewController.swift */,
 				80C0DAA72253817F00466EA6 /* TripViewController.swift */,
+				8025A0C42253BDCF0027711D /* ExpenseTableViewCell.swift */,
 				80C0DAA522536E1A00466EA6 /* BasicPersonTableViewCell.swift */,
 				80C0DA9F22535B6900466EA6 /* CreatePersonViewController.swift */,
 				80C0DA9D2253599A00466EA6 /* BasicPersonListController.swift */,
@@ -303,13 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8025A0C72253C1D30027711D /* Expense.swift in Sources */,
 				80C0DAA422535EDA00466EA6 /* Person.swift in Sources */,
 				80C0DAA622536E1A00466EA6 /* BasicPersonTableViewCell.swift in Sources */,
 				80C0DAA82253817F00466EA6 /* TripViewController.swift in Sources */,
+				8025A0BF2253B5910027711D /* DetailBasicPersonViewController.swift in Sources */,
 				80C0DA712253559100466EA6 /* GiveTheMoney.xcdatamodeld in Sources */,
 				80C0DA9E2253599A00466EA6 /* BasicPersonListController.swift in Sources */,
 				80C0DAA022535B6900466EA6 /* CreatePersonViewController.swift in Sources */,
+				8025A0C52253BDCF0027711D /* ExpenseTableViewCell.swift in Sources */,
 				80C0DA692253559100466EA6 /* AppDelegate.swift in Sources */,
+				8025A0C32253BCF80027711D /* Concerned.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

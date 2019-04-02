@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Concerned" representedClassName="Concerned" syncable="YES" codeGenerationType="category">
+        <attribute name="amountSpent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="concernedExpense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="concernedBy" inverseEntity="Expense" syncable="YES"/>
+        <relationship name="personConcerned" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="concernedBy" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Expense" representedClassName="Expense" syncable="YES" codeGenerationType="category">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalCost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="concernedBy" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Concerned" inverseName="concernedExpense" inverseEntity="Concerned" syncable="YES"/>
+    </entity>
     <entity name="Person" representedClassName=".Person" syncable="YES" codeGenerationType="category">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="concernedBy" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Concerned" inverseName="personConcerned" inverseEntity="Concerned" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Person" positionX="21.81640625" positionY="-118.4453125" width="128" height="103"/>
+        <element name="Concerned" positionX="-254.28125" positionY="0.67578125" width="128" height="88"/>
+        <element name="Expense" positionX="-165.0078125" positionY="199.73046875" width="128" height="88"/>
     </elements>
 </model>
