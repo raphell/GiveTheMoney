@@ -292,6 +292,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="XgB-I4-V3t" id="IzR-6s-zzG"/>
+                                    <outlet property="delegate" destination="XgB-I4-V3t" id="cTg-yl-obP"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuH-rw-BjU">
@@ -307,6 +308,9 @@
                         <viewLayoutGuide key="safeArea" id="kvK-Y2-MUS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Person list" id="5qE-FS-F2p"/>
+                    <connections>
+                        <outlet property="basicPersonTable" destination="eB5-Os-lOB" id="9KF-Cd-fzo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkQ-Ov-HEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

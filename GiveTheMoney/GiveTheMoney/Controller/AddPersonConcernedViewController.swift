@@ -9,6 +9,15 @@
 import UIKit
 
 class AddPersonConcernedViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate {
+   
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Person.all.count
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

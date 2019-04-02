@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class BasicPersonListController: UIViewController, UITableViewDataSource {
+class BasicPersonListController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView)->Int{
         return 1
@@ -25,9 +25,21 @@ class BasicPersonListController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasicPersonCell", for: indexPath) as! BasicPersonTableViewCell
         
         //cell.insertInfo(firstName: person.firstName, lastName: person.lastName, phoneNumber: person.phone)
-        cell.firstNameLabel.text = person.firstName
-        cell.lastNameLabel.text = person.lastName
-        cell.phoneLabel.text = person.phone
+        if let fi = cell.firstNameLabel {
+            if let first = person.firstName{
+                fi.text = first
+            }
+            if let last = person.lastName{
+                cell.firstNameLabel?.text = last ?? ""
+            }
+            if let phone = person.phone{
+                cell.firstNameLabel?.text = phone ?? ""
+            }
+        NSLog(cell.firstNameLabel.text ?? "FIRST NULL")
+        NSLog(cell.firstNameLabel.text ?? "LAST NULL")
+        NSLog(cell.firstNameLabel.text ?? "PHONE NULL")
+        
+        }
         return cell
     }
         
@@ -47,14 +59,13 @@ class BasicPersonListController: UIViewController, UITableViewDataSource {
     }*/
     
     
-    
-    var basicPersonTable: UITableView?
+    @IBOutlet weak var basicPersonTable: UITableView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        basicPersonTable?.dataSource = self
+        basicPersonTable.dataSource = self
         // Do any additional setup after loading the view.
         
     }
@@ -62,7 +73,8 @@ class BasicPersonListController: UIViewController, UITableViewDataSource {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        basicPersonTable?.reloadData()
+        NSLog("IN viewWillAppear")
+        basicPersonTable.reloadData()
     }
     
     let segueDetailBasicPersonId = "segueDetailBasicPerson"
@@ -74,7 +86,7 @@ class BasicPersonListController: UIViewController, UITableViewDataSource {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == self.segueDetailBasicPersonId{
-            if let index = self.basicPersonTable?.indexPathForSelectedRow?.row{
+            if let index = self.basicPersonTable.indexPathForSelectedRow?.row{
                 let showDetainController = segue.destination as!DetailBasicPersonViewController
                 showDetainController.person = Person.all[index]
             }

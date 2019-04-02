@@ -27,7 +27,7 @@ class BasicPersonTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func insertInfo(firstName first: String, lastName last: String, phoneNumber phone: String){
+    /*public func insertInfo(firstName first: String, lastName last: String, phoneNumber phone: String){
         
         NSLog(first)
         NSLog(last)
@@ -41,6 +41,6 @@ class BasicPersonTableViewCell: UITableViewCell {
         
         lastNameLabel?.text = last
         phoneLabel?.text = phone
-    }
+    }*/
 
 }
