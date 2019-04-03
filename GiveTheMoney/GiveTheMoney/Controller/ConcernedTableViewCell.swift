@@ -20,7 +20,7 @@ class ConcernedTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
     @IBOutlet weak var firstNameLab: UILabel!
     @IBOutlet weak var lastNameLab: UILabel!
     @IBOutlet weak var amountLab: UILabel!

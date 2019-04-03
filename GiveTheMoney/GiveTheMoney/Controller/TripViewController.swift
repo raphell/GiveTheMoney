@@ -44,14 +44,22 @@ class TripViewController: UIViewController, UITableViewDataSource  {
         super.viewDidAppear(animated)
         expenseTable.reloadData()
     }
-    /*
-    // MARK: - Navigation
+    
+    
+    // MARK: - Navigation //////////////////////////
 
+    let detailExpenseSegueId = "detailExpenseSegueId"
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == self.detailExpenseSegueId{
+            if let index = self.expenseTable.indexPathForSelectedRow?.row{
+                let showExpenseDetailController = segue.destination as!DetailExpenseViewController
+                showExpenseDetailController.currentExpense = Expense.all[index]
+            }
+        }
     }
-    */
+    
 
 }

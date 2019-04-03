@@ -10,7 +10,7 @@ import UIKit
 
 class DetailExpenseViewController: UIViewController, UITableViewDataSource {
     
-    let currentExpense: Expense = Expense(context: AppDelegate.viewContext)
+    var currentExpense: Expense = Expense(context: AppDelegate.viewContext)
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -19,19 +19,30 @@ class DetailExpenseViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let currentConcernement = currentExpense.concernedBy?.
-        let personConcerned = currentConcernement.personConcerned
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConcernedCell", for: indexPath) as! ConcernedTableViewCell
         
-        
-        
+        if let currentConcernements = currentExpense.concernedBy?.allObjects as! [Concerned]?{
+            NSLog("WE HAVE THE CURRENTS CONCERNEMENTS")
+            let personConcerned = currentConcernements[indexPath.row].personConcerned
+            let firstName = personConcerned?.firstName
+            let lastName = personConcerned?.lastName
+            let amount = currentConcernements[indexPath.row].amountSpent
+            
+            cell.amountLab.text = amount.description
+            cell.firstNameLab.text = firstName
+            cell.lastNameLab.text = lastName
+        }
         return cell
     }
     
-
+    @IBOutlet weak var expenseNameLabel: UILabel!
+    @IBOutlet weak var concernedPersonTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.expenseNameLabel.text = currentExpense.name
+        concernedPersonTable.dataSource = self
         // Do any additional setup after loading the view.
     }
     

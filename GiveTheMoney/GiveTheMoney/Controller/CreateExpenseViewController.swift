@@ -34,8 +34,10 @@ class CreateExpenseViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var concernedTable: UITableView!
     
+    @IBOutlet weak var expenseDate: UIDatePicker!
+    
+    
     @IBAction func createExpense(_ sender: Any) {
-        
         guard let expenseName = expenseName.text else{
             return
         }
@@ -48,6 +50,7 @@ class CreateExpenseViewController: UIViewController, UITableViewDataSource {
             totalAmount += concerned.amountSpent
         }
         newExpense.totalCost = totalAmount
+        newExpense.date = expenseDate.date
         
         try? AppDelegate.viewContext.save()
         navigationController?.popViewController(animated: true)

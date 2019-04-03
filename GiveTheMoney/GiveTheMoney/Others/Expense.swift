@@ -13,6 +13,7 @@ class Expense: NSManagedObject{
     
     static var all: [Expense] {
         let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         guard let expenses = try? AppDelegate.viewContext.fetch(request)else{
             return []
         }

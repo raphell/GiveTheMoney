@@ -13,6 +13,7 @@ class Person: NSManagedObject{
     
     static var all: [Person] {
         let request: NSFetchRequest<Person> = Person.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "firstName", ascending: true)]
         guard let persons = try? AppDelegate.viewContext.fetch(request)else{
             return []
         }
