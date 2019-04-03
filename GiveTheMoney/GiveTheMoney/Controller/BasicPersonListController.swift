@@ -24,41 +24,14 @@ class BasicPersonListController: UIViewController, UITableViewDataSource, UITabl
         let person = Person.all[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "BasicPersonCell", for: indexPath) as! BasicPersonTableViewCell
         
-        //cell.insertInfo(firstName: person.firstName, lastName: person.lastName, phoneNumber: person.phone)
-        if let fi = cell.firstNameLabel {
-            if let first = person.firstName{
-                fi.text = first
-            }
-            if let last = person.lastName{
-                cell.firstNameLabel?.text = last ?? ""
-            }
-            if let phone = person.phone{
-                cell.firstNameLabel?.text = phone ?? ""
-            }
-        NSLog(cell.firstNameLabel.text ?? "FIRST NULL")
-        NSLog(cell.firstNameLabel.text ?? "LAST NULL")
-        NSLog(cell.firstNameLabel.text ?? "PHONE NULL")
-        
+        if let first = person.firstName, let last = person.lastName,let phone = person.phone {
+            cell.insertInfo(firstName: first, lastName: last, phoneNumber: phone)
         }
         return cell
     }
-        
-        /*NSLog(person.lastName as! String)
-        NSLog(person.firstName as! String)
-        NSLog(person.phone as! String)
-        
-        cell.insertInfo(firstName: first, lastName: last, phoneNumber: phone)
-        //cell.lastNameLabel?.text = person.lastName
-        //
-        //NSLog(cell.lastNameLabel?.text as! String)
-        //cell.firstNameLabel?.text = person.firstName
-        //
-        //cell.phoneLabel?.text = person.phone
-        //
-        return cell
-    }*/
     
     
+    //@IBOutlet weak var basicPersonTable: UITableView!
     @IBOutlet weak var basicPersonTable: UITableView!
     
 
@@ -66,14 +39,13 @@ class BasicPersonListController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
 
         basicPersonTable.dataSource = self
+    
         // Do any additional setup after loading the view.
         
     }
-    
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NSLog("IN viewWillAppear")
         basicPersonTable.reloadData()
     }
     

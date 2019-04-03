@@ -43,9 +43,7 @@ class CreatePersonViewController: UIViewController {
         person.firstName = first
         person.lastName = last
         person.phone = phone
-        NSLog("PERSON CREATED")
         try? AppDelegate.viewContext.save()
-        NSLog("PERSON SAVED")
         navigationController?.popViewController(animated: true)
     }
     

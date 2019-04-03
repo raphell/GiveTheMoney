@@ -22,19 +22,28 @@ class TripViewController: UIViewController, UITableViewDataSource  {
         let expense = Expense.all[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpenseCell", for: indexPath) as! ExpenseTableViewCell
         cell.expenseName.text = expense.name
-        
+        cell.totalCostLabel.text = expense.totalCost.description
         return cell
     }
     
 
+    @IBOutlet weak var expenseTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.expenseTable?.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-    var expenseTable: UITableView?
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        expenseTable.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        expenseTable.reloadData()
+    }
     /*
     // MARK: - Navigation
 

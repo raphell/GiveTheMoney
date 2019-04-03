@@ -11,6 +11,7 @@ import UIKit
 class BasicPersonTableViewCell: UITableViewCell {
     
     
+    
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -27,20 +28,10 @@ class BasicPersonTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    /*public func insertInfo(firstName first: String, lastName last: String, phoneNumber phone: String){
-        
-        NSLog(first)
-        NSLog(last)
-        NSLog(phone)
-        
-        //if firstNameLabel != nil{
-        //    NSLog("TEEEEEEEEEST")
-            firstNameLabel?.text = first
-        //}
-        
-        
+    public func insertInfo(firstName first: String, lastName last: String, phoneNumber phone: String){
+
+        firstNameLabel.text = first
         lastNameLabel?.text = last
         phoneLabel?.text = phone
-    }*/
-
+    }
 }
