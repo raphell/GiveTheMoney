@@ -26,5 +26,18 @@ class ResetViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func reset(_ sender: Any) {
+        Expense.deleteAll()
+        Concerned.deleteAll()
+        Person.deleteAll()
+    
+        navigationController?.popViewController(animated: true)
+    }
+    
 
+    @IBAction func cancel(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }

@@ -12,7 +12,7 @@ import CoreData
 class Person: NSManagedObject{
     
     static var all: [Person] {
-        let request: NSFetchRequest<Person> = Person.fetchRequest() as! NSFetchRequest<Person>
+        let request: NSFetchRequest<Person> = Person.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "firstName", ascending: true)]
         guard let persons = try? AppDelegate.viewContext.fetch(request)else{
             return []
@@ -20,27 +20,16 @@ class Person: NSManagedObject{
         return persons
     }
     
-    static func deleteAll(_ entity: String){
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(EntityName: entity)
-        fetchRequest.returnObjectsAsFaults = false
-        do{
-            let results = try AppDelegate.viewContext.fetch(fetchRequest)
-            for object in results{
-                guard let objectData = object as? NSManagedObject else {continue}
-                AppDelegate.viewContext.delete(objectData)
-            }
-        }catch let error{
-            print("Error while deleting")
+    static func deleteAll(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try AppDelegate.viewContext.execute(batchDeleteRequest)
+        }
+        catch{
+            NSLog("FAIL DELETING ALL PERSON")
         }
     }
-    
-    /*static func deleteAllData(entity: String)
-    {
-        let ReqVar = NSFetchRequest(entityName: entity)
-        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
-        do { try ContxtVar.executeRequest(DelAllReqVar) }
-        catch { print(error) }
-    }*/
-    
     
 }

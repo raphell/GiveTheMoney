@@ -20,5 +20,16 @@ class Expense: NSManagedObject{
         return expenses
     }
     
+    static func deleteAll(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expense")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try AppDelegate.viewContext.execute(batchDeleteRequest)
+        }
+        catch{
+            NSLog("FAIL DELETING ALL EXPENSES")
+        }
+    }
     
 }

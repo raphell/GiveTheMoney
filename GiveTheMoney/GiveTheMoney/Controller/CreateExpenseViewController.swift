@@ -49,10 +49,12 @@ class CreateExpenseViewController: UIViewController, UITableViewDataSource {
             newExpense.addToConcernedBy(concerned)
             totalAmount += concerned.amountSpent
         }
+        NSLog("CREATE ONE EXPENSE")
         newExpense.totalCost = totalAmount
         newExpense.date = expenseDate.date
         
         try? AppDelegate.viewContext.save()
+        NSLog(Expense.all.count.description)
         navigationController?.popViewController(animated: true)
     }
     

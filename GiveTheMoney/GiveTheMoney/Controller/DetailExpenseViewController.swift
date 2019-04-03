@@ -22,7 +22,6 @@ class DetailExpenseViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewConcernedCell", for: indexPath) as! NewConcernedTableViewCell
         
         if let currentConcernements = currentExpense.concernedBy?.allObjects as! [Concerned]?{
-            NSLog("WE HAVE THE CURRENTS CONCERNEMENTS")
             let personConcerned = currentConcernements[indexPath.row].personConcerned
             let firstName = personConcerned?.firstName
             let lastName = personConcerned?.lastName

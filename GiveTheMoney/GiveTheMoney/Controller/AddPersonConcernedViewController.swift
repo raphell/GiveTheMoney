@@ -60,7 +60,7 @@ class AddPersonConcernedViewController: UIViewController,UIPickerViewDataSource,
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        guard let amount = Double(amoutPaid.text ?? "") else{
+        guard let amount = Double((amoutPaid.text)!) else{
             return false
         }
         //add verification if the person is already concerned

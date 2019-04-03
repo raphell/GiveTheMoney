@@ -15,6 +15,7 @@ class TripViewController: UIViewController, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        NSLog(Expense.all.count.description)
         return Expense.all.count
     }
     
@@ -61,13 +62,5 @@ class TripViewController: UIViewController, UITableViewDataSource  {
         }
     }
     
-    @IBAction func resetAll(_ sender: Any) {
-        
-        
-        navigationController?.popViewController(animated: true)
-    }
     
-    @IBAction func cancelReset(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
 }

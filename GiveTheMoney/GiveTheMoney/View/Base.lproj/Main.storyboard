@@ -229,6 +229,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OUI !"/>
                                 <connections>
+                                    <action selector="reset:" destination="MF0-2T-cbs" eventType="touchUpInside" id="FWx-j9-Xrx"/>
                                     <action selector="resetAll:" destination="rQT-7c-gef" eventType="touchUpInside" id="9HW-it-iyw"/>
                                 </connections>
                             </button>
@@ -237,6 +238,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NON"/>
                                 <connections>
+                                    <action selector="cancel:" destination="MF0-2T-cbs" eventType="touchUpInside" id="izC-S2-ad6"/>
                                     <action selector="cancelReset:" destination="rQT-7c-gef" eventType="touchUpInside" id="qQl-Sl-J2Q"/>
                                 </connections>
                             </button>

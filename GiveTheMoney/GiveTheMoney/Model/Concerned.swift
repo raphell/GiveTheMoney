@@ -19,5 +19,15 @@ class Concerned: NSManagedObject{
         return allConcerned
     }
     
-    
+    static func deleteAll(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Concerned")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try AppDelegate.viewContext.execute(batchDeleteRequest)
+        }
+        catch{
+            NSLog("FAIL DELETING ALL CONCERNED")
+        }
+    }
 }
