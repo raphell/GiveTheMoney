@@ -21,4 +21,8 @@ class NewConcernedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBOutlet weak var firstNLabel: UILabel!
+    
+    @IBOutlet weak var lastNLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
 }

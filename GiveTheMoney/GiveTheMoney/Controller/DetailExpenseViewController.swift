@@ -19,7 +19,7 @@ class DetailExpenseViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ConcernedCell", for: indexPath) as! ConcernedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewConcernedCell", for: indexPath) as! NewConcernedTableViewCell
         
         if let currentConcernements = currentExpense.concernedBy?.allObjects as! [Concerned]?{
             NSLog("WE HAVE THE CURRENTS CONCERNEMENTS")
@@ -28,9 +28,9 @@ class DetailExpenseViewController: UIViewController, UITableViewDataSource {
             let lastName = personConcerned?.lastName
             let amount = currentConcernements[indexPath.row].amountSpent
             
-            cell.amountLab.text = amount.description
-            cell.firstNameLab.text = firstName
-            cell.lastNameLab.text = lastName
+            cell.amountLabel.text = amount.description
+            cell.firstNLabel.text = firstName
+            cell.lastNLabel.text = lastName
         }
         return cell
     }
@@ -40,6 +40,7 @@ class DetailExpenseViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("IT S ALIIIIIIIIVE")
 
         self.expenseNameLabel.text = currentExpense.name
         concernedPersonTable.dataSource = self

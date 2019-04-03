@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		800C3E9B22550FD000E5D1D4 /* NewConcernedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800C3E9A22550FD000E5D1D4 /* NewConcernedTableViewCell.swift */; };
+		800C3E9D2255195B00E5D1D4 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800C3E9C2255195B00E5D1D4 /* ResetViewController.swift */; };
 		8025A0BF2253B5910027711D /* DetailBasicPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A0BE2253B5910027711D /* DetailBasicPersonViewController.swift */; };
 		8025A0C32253BCF80027711D /* Concerned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A0C22253BCF80027711D /* Concerned.swift */; };
 		8025A0C52253BDCF0027711D /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8025A0C42253BDCF0027711D /* ExpenseTableViewCell.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		800C3E9A22550FD000E5D1D4 /* NewConcernedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConcernedTableViewCell.swift; sourceTree = "<group>"; };
+		800C3E9C2255195B00E5D1D4 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		8025A0BE2253B5910027711D /* DetailBasicPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBasicPersonViewController.swift; sourceTree = "<group>"; };
 		8025A0C22253BCF80027711D /* Concerned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerned.swift; sourceTree = "<group>"; };
 		8025A0C42253BDCF0027711D /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				8025A0C42253BDCF0027711D /* ExpenseTableViewCell.swift */,
 				80C0DAA522536E1A00466EA6 /* BasicPersonTableViewCell.swift */,
 				8035F3332254A9FA00EE1530 /* ConcernedTableViewCell.swift */,
+				800C3E9C2255195B00E5D1D4 /* ResetViewController.swift */,
 				8035F3372254CD6800EE1530 /* DetailExpenseViewController.swift */,
 				8025A0CA2253CDEA0027711D /* AddPersonConcernedViewController.swift */,
 				8025A0C82253CD230027711D /* CreateExpenseViewController.swift */,
@@ -333,6 +336,7 @@
 				8035F3382254CD6800EE1530 /* DetailExpenseViewController.swift in Sources */,
 				8025A0C72253C1D30027711D /* Expense.swift in Sources */,
 				80C0DAA422535EDA00466EA6 /* Person.swift in Sources */,
+				800C3E9D2255195B00E5D1D4 /* ResetViewController.swift in Sources */,
 				80C0DAA622536E1A00466EA6 /* BasicPersonTableViewCell.swift in Sources */,
 				8035F3342254A9FA00EE1530 /* ConcernedTableViewCell.swift in Sources */,
 				8025A0CB2253CDEA0027711D /* AddPersonConcernedViewController.swift in Sources */,
