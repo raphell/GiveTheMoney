@@ -35,6 +35,7 @@ class CreateExpenseViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var concernedTable: UITableView!
     
     @IBAction func createExpense(_ sender: Any) {
+        
         guard let expenseName = expenseName.text else{
             return
         }
