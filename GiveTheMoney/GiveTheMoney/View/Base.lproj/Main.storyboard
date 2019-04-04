@@ -64,17 +64,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameExpense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsZ-sC-Zcq">
-                                <rect key="frame" x="60" y="179" width="255" height="26"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <rect key="frame" x="60" y="179" width="255" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fl4-xf-1sb">
-                                <rect key="frame" x="16" y="284" width="343" height="334"/>
+                                <rect key="frame" x="16" y="286.5" width="343" height="334"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="334" id="jyz-07-iTl"/>
-                                    <constraint firstAttribute="width" constant="343" id="rMW-5M-Lbk"/>
+                                    <constraint firstAttribute="width" constant="343" id="O8C-jI-Yue"/>
+                                    <constraint firstAttribute="height" constant="334" id="f1L-zJ-M49"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewConcernedCell" id="1uE-3p-N6d" customClass="NewConcernedTableViewCell" customModule="GiveTheMoney" customModuleProvider="target">
@@ -114,12 +114,18 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="sB2-ns-alM" id="VrU-E7-pfx"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participants :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbE-Ht-GPI">
-                                <rect key="frame" x="16" y="242" width="125.5" height="26"/>
+                                <rect key="frame" x="125" y="245.5" width="125.5" height="26"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -127,15 +133,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.3310223222" green="0.59436208010000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rbE-Ht-GPI" firstAttribute="top" secondItem="CsZ-sC-Zcq" secondAttribute="bottom" constant="35" id="1NE-Av-aM8"/>
                             <constraint firstItem="CsZ-sC-Zcq" firstAttribute="top" secondItem="WPg-J4-cHJ" secondAttribute="bottom" constant="35" id="3su-Gh-GWF"/>
                             <constraint firstItem="VSN-0L-Oy2" firstAttribute="trailing" secondItem="WPg-J4-cHJ" secondAttribute="trailing" id="6AP-jF-64e"/>
-                            <constraint firstItem="rbE-Ht-GPI" firstAttribute="top" secondItem="CsZ-sC-Zcq" secondAttribute="bottom" constant="37" id="LR6-Ar-TTj"/>
+                            <constraint firstItem="Fl4-xf-1sb" firstAttribute="top" secondItem="rbE-Ht-GPI" secondAttribute="bottom" constant="15" id="6k9-fF-oTh"/>
                             <constraint firstItem="WPg-J4-cHJ" firstAttribute="top" secondItem="VSN-0L-Oy2" secondAttribute="top" constant="35" id="UgK-XE-a3J"/>
                             <constraint firstItem="WPg-J4-cHJ" firstAttribute="leading" secondItem="VSN-0L-Oy2" secondAttribute="leading" id="Xst-RG-cFT"/>
-                            <constraint firstItem="Fl4-xf-1sb" firstAttribute="top" secondItem="rbE-Ht-GPI" secondAttribute="bottom" constant="16" id="YT8-4A-4wU"/>
-                            <constraint firstItem="rbE-Ht-GPI" firstAttribute="leading" secondItem="VSN-0L-Oy2" secondAttribute="leading" constant="16" id="kSQ-rE-CLL"/>
+                            <constraint firstItem="rbE-Ht-GPI" firstAttribute="centerX" secondItem="i3a-xg-OG1" secondAttribute="centerX" id="aXA-hg-ohT"/>
+                            <constraint firstItem="Fl4-xf-1sb" firstAttribute="centerX" secondItem="i3a-xg-OG1" secondAttribute="centerX" id="kBy-g3-pXT"/>
                             <constraint firstItem="VSN-0L-Oy2" firstAttribute="trailing" secondItem="CsZ-sC-Zcq" secondAttribute="trailing" constant="60" id="rEq-rJ-WXN"/>
-                            <constraint firstItem="Fl4-xf-1sb" firstAttribute="centerX" secondItem="i3a-xg-OG1" secondAttribute="centerX" id="s3W-Ij-NYx"/>
                             <constraint firstItem="CsZ-sC-Zcq" firstAttribute="leading" secondItem="VSN-0L-Oy2" secondAttribute="leading" constant="60" id="zvF-J5-Qwk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VSN-0L-Oy2"/>
@@ -195,6 +201,12 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="vSk-Jl-JYP" id="gHT-F8-3V1"/>
                                 </connections>
@@ -453,6 +465,12 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="bKX-yv-mXO" id="0GZ-0o-8oK"/>
                                 </connections>
@@ -732,6 +750,12 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="XgB-I4-V3t" id="IzR-6s-zzG"/>
                                     <outlet property="delegate" destination="XgB-I4-V3t" id="cTg-yl-obP"/>
