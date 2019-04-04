@@ -27,6 +27,21 @@ class TripViewController: UIViewController, UITableViewDataSource  {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            self.expenseTable.beginUpdates()
+            if Expense.deleteOne(index: indexPath.row){
+                self.expenseTable.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            }
+            self.expenseTable.endUpdates()
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath)-> Bool{
+        return true
+    }
+    
 
     @IBOutlet weak var expenseTable: UITableView!
     

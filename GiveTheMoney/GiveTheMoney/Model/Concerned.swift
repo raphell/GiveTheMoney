@@ -19,6 +19,20 @@ class Concerned: NSManagedObject{
         return allConcerned
     }
     
+    static func deleteOne(index: Int)-> Bool{
+        let concerned = Concerned.all[index]
+        AppDelegate.viewContext.delete(concerned)
+        
+        do {
+            try AppDelegate.viewContext.save()
+            return true
+        }
+        catch{
+            NSLog("FAIL TO DELETE A CORE DATA CONCERNED")
+            return false
+        }
+    }
+    
     static func deleteAll(){
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Concerned")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)

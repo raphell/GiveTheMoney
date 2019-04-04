@@ -31,6 +31,27 @@ class BasicPersonListController: UIViewController, UITableViewDataSource, UITabl
     }
     
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            self.basicPersonTable.beginUpdates()
+            if Person.deleteOne(index: indexPath.row){
+                self.basicPersonTable.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            }
+            self.basicPersonTable.endUpdates()
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath)-> Bool{
+        let persons = Person.all
+        if persons[indexPath.row].concernedBy == nil || persons[indexPath.row].concernedBy == [] {
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
     //@IBOutlet weak var basicPersonTable: UITableView!
     @IBOutlet weak var basicPersonTable: UITableView!
     

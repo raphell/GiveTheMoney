@@ -30,6 +30,22 @@ class CreateExpenseViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        if editingStyle == .delete{
+            self.concernedTable.beginUpdates()
+            if Concerned.deleteOne(index: indexPath.row){
+                self.concernedTable.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            }
+            self.concernedTable.endUpdates()
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath)-> Bool{
+        return true
+    }
+    
+    
     @IBOutlet weak var expenseName: UITextField!
     
     @IBOutlet weak var concernedTable: UITableView!

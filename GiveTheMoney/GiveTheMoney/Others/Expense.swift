@@ -20,6 +20,20 @@ class Expense: NSManagedObject{
         return expenses
     }
     
+    static func deleteOne(index: Int)-> Bool{
+        let expense = Expense.all[index]
+        AppDelegate.viewContext.delete(expense)
+        
+        do {
+            try AppDelegate.viewContext.save()
+            return true
+        }
+        catch{
+            NSLog("FAIL TO DELETE A CORE DATA EXPENSE")
+            return false
+        }
+    }
+    
     static func deleteAll(){
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expense")
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)

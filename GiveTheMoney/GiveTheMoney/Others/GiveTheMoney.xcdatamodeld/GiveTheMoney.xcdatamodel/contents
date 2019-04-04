@@ -15,10 +15,10 @@
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="concernedBy" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Concerned" inverseName="personConcerned" inverseEntity="Concerned" syncable="YES"/>
+        <relationship name="concernedBy" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Concerned" inverseName="personConcerned" inverseEntity="Concerned" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Concerned" positionX="-254.28125" positionY="0.67578125" width="128" height="88"/>
+        <element name="Concerned" positionX="-254.28125" positionY="0.67578125" width="128" height="90"/>
         <element name="Expense" positionX="-165.0078125" positionY="199.73046875" width="128" height="103"/>
         <element name="Person" positionX="21.81640625" positionY="-118.4453125" width="128" height="105"/>
     </elements>
