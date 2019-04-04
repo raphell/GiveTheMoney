@@ -27,6 +27,7 @@ class BasicPersonListController: UIViewController, UITableViewDataSource, UITabl
         if let first = person.firstName, let last = person.lastName,let phone = person.phone {
             cell.insertInfo(firstName: first, lastName: last, phoneNumber: phone)
         }
+        NSLog("BEFORE RETURN CEEEEEEEEEEEELL")
         return cell
     }
     
